@@ -1838,6 +1838,8 @@ padding: 10px;
 
 .blog-img img {
   max-width: 550px;
+  height: 350px;
+  object-fit: cover;
 }
 
 /* Blog Right side Content */
