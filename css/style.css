@@ -1153,9 +1153,18 @@ hr.hr-border {
   overflow-x: hidden;
 }
 
+
 .team-member {
   position: relative;
 }
+
+.team-img-l{
+	margin: auto; !important
+width: 60%; !Important
+border: 5px solid #FFFF00;
+padding: 10px;
+}
+
 
 .team-member img {
   width: 100%;
