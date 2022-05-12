@@ -32,7 +32,17 @@
     autoplay: true
   });
 
+  $('#homeLink').click(function() {
+    $.scrollTo($('#home'), 1000);
+  });
 
+  $('#blogLink').click(function() {
+    $.scrollTo($('#blog'), 1000);
+  });
+
+  $('#teamLink').click(function() {
+    $.scrollTo($('#team'), 1000);
+  });
 
   /*
    *----------------------------------
@@ -94,5 +104,4 @@
     });
 
   }); // DOM Ready
-
 }(jQuery)); // IIFE

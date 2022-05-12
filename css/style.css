@@ -2583,6 +2583,10 @@ form .padding-left-15 {
   }
 }
 
+.navLink {
+  cursor: pointer;
+}
+
 /* Medium Devices, Desktops */
 /* Large Devices, Wide Screens */
 

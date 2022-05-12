@@ -86,8 +86,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a class="navLink" id="homeLink">Home</a></li>
+        <li><a class="navLink" id="blogLink">Blog</a></li>
+        <li><a class="navLink" id="teamLink">Team</a></li>
+        <li><a class="navLink" href="contact.html">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -95,7 +97,7 @@
 
  <!-- Hero Area -section
   =========================-->
-  <header class="hero-area th-fullpage" data-parallax="scroll" data-image-src="images/slider/bg-1.jpg">
+  <header class="hero-area th-fullpage" id="home" data-parallax="scroll" data-image-src="images/slider/bg-1.jpg">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -111,7 +113,7 @@
 
   <section class="case-study">
     <div class="text-center">
-      <h2 class="title">De robot</h2>
+      <h2 class="title">De Robot</h2>
     </div>
     <!-- Case Study Description
       top section -->
@@ -175,7 +177,7 @@
       </div>
     </section>
 
-    <section class="blog">
+    <section class="blog" id="blog">
       <div class="container">
         <div class="row">
           <div class="title text-center">
@@ -288,7 +290,7 @@
   <!-- Team Sections
   =========================-->
 
-	<section class="team">
+	<section class="team" id="team">
       <div class=" text-center">
         <h1>Team</h1>
       </div>
@@ -558,6 +560,7 @@ In mijn vrije tijd ben ik vaak te vinden achter mijn pc waar ik meestal game of 
     </div>
   </section>
     <script src="plugins/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
 
     <script src="plugins/bootstrap/bootstrap.min.js"></script>
     <!-- slick slider -->
