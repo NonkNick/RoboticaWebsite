@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        window.onload=function() {
+            var socket = io();
+
+            var message = document.getElementById('message');
+            const image = document.getElementById('image');
+            var form = document.getElementById('form');
+            var input = document.getElementById('input');
+
+            // form.addEventListener('submit', function (e) {
+            //     e.preventDefault();
+            //     if (input.value) {
+            //         socket.emit('greppelstate', input.value);
+            //         input.value = '';
+            //     }
+            // });
+
+            socket.on('greppelstate', function (msg) {
+                var item = document.createElement('li');
+                item.textContent = msg;
+                message.innerHTML = msg;
+                window.scrollTo(0, document.body.scrollHeight);
+            });
+
+            socket.on('image', function(data) {
+                image.src = 'data:image/jpeg;base64,${image}';
+            });
+        }
+    </script>
+    <title>Greppel Telemetry</title>
+
+</head>
+<body>
+<img id="image">
+<p id="message"></p>
+</body>
+</html>

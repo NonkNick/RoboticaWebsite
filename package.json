@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "isomorphic-ws": "^4.0.1",
-    "ws": "^8.6.0"
-  }
-}
