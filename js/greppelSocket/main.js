@@ -4,7 +4,10 @@ const http = require('http');
 const path = require("path");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
+const buffer = require("buffer");
 const io = new Server(server);
+
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + "../../../socketIOtest.html"));
@@ -20,7 +23,9 @@ io.on('connection', (socket) => {
         console.log(state);
     });
 
-    socket.on('image')
+    socket.on('image', (img) => {
+        io.emit('image', Buffer.from(img, 'base64').toString());
+    });
 });
 
 

@@ -2,22 +2,19 @@
 <html>
 <head>
     <script src="/socket.io/socket.io.js"></script>
+<!--    <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js"></script>-->
+<!--    <script src="http://greppel.tech/js/greppelSocket/buffer.js"></script>-->
     <script>
         window.onload=function() {
+            // global.Buffer = global.Buffer || require("buffer").Buffer; // eslint-disable-line
+            // const privateKey = buffer.Buffer.from(PRIVATE_KEY_1, "hex");
             var socket = io();
 
             var message = document.getElementById('message');
+            var b64 = document.getElementById('b64');
             const image = document.getElementById('image');
             var form = document.getElementById('form');
             var input = document.getElementById('input');
-
-            // form.addEventListener('submit', function (e) {
-            //     e.preventDefault();
-            //     if (input.value) {
-            //         socket.emit('greppelstate', input.value);
-            //         input.value = '';
-            //     }
-            // });
 
             socket.on('greppelstate', function (msg) {
                 var item = document.createElement('li');
@@ -27,9 +24,10 @@
             });
 
             socket.on('image', function(data) {
-                image.src = 'data:image/jpeg;base64,${image}';
+                image.src = "data:image/jpeg;base64," + data;
             });
         }
+
     </script>
     <title>Greppel Telemetry</title>
 
@@ -37,5 +35,6 @@
 <body>
 <img id="image">
 <p id="message"></p>
+<p id="b64"></p>
 </body>
 </html>

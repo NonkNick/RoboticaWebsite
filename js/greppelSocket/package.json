@@ -2,10 +2,16 @@
   "name": "greppelsocket",
   "version": "1.0.0",
   "dependencies": {
+    "buffer": "^6.0.3",
     "express": "^4.18.1",
     "isomorphic-ws": "^4.0.1",
+    "msgpack-lite": "^0.1.26",
+    "object-sizeof": "^1.6.3",
     "socket.io": "^4.5.1",
     "ws": "^8.6.0"
+  },
+  "browser": {
+    "msgpack-lite": "msgpack-lite/global"
   },
   "main": "main.js",
   "scripts": {
