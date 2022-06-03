@@ -1,0 +1,35 @@
+.robot_container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1.5fr 2fr 1.5fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    ". . ."
+    "dc1 . dc2"
+    ". . ."
+    "dc3 . dc4"
+    ". . .";
+    width: 384px;
+    height: 650px;
+    background-image: url("/images/bovenaanzicht.png");
+}
+
+#dc1c {
+    grid-area: dc1;
+    margin: auto;
+}
+
+#dc2c {
+    grid-area: dc2;
+    margin: auto;
+}
+
+#dc3c {
+    grid-area: dc3;
+    margin: auto;
+}
+
+#dc4c {
+    grid-area: dc4;
+    margin: auto;
+}
