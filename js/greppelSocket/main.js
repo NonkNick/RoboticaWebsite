@@ -14,6 +14,7 @@ const io = require("socket.io")(httpServer, {
     serveClient: true
 });
 
+// Zorgt ervoor dat dependencies goed doorgegeven kunnen worden naar de Javascript client
 app.get('/', (req, res) => {
     app.use(express.static(__dirname + '../../../'));
     res.sendFile(path.join(__dirname + "../../../telemetrics.html"));
@@ -24,11 +25,12 @@ httpServer.listen(3000, () => {
 });
 
 io.on('connection', (socket) => {
+    // Bij ontvangst van telemetrie-data stuur dit door naar de Javascript client
     socket.on('greppelstate', (state) => {
         io.emit('greppelstate', state);
         // console.log(state);
     });
-
+    // Bij ontvangst van een base64 img, decode van een arraybuffer naar een base64 string en stuur dit door naar de Javascript client
     socket.on('image', (img) => {
         io.emit('image', Buffer.from(img, 'base64').toString());
     });

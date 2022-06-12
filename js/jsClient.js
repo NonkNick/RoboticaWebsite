@@ -1,12 +1,5 @@
 window.onload=function() {
-    // global.Buffer = global.Buffer || require("buffer").Buffer; // eslint-disable-line
-    // const privateKey = buffer.Buffer.from(PRIVATE_KEY_1, "hex");
-    console.log("nog geen error")
-    // var socket = io();
-    // var socket = io.connect(
-    //     'http://greppel.tech/telemetrics/'
-    //     , {resource: 'telemetrics/socket.io'}
-    // );
+
     var socket = io.connect("ws://greppel.tech:3000");
 
     var dc1 = document.getElementById('dc1');
@@ -22,10 +15,10 @@ window.onload=function() {
         // console.log(JSON.parse(msg));
         var dataArr = JSON.parse(msg);
         // console.log(arr["dc1"][0]);
-        dc1.style.height = dataArr["dc1"][0] + "px";
-        dc2.style.height = dataArr["dc2"][0] + "px";
-        dc3.style.height = dataArr["dc3"][0] + "px";
-        dc4.style.height = dataArr["dc4"][0] + "px";
+        dc1.style.height = dataArr["dc1"] + "px";
+        dc2.style.height = dataArr["dc2"] + "px";
+        dc3.style.height = dataArr["dc3"] + "px";
+        dc4.style.height = dataArr["dc4"] + "px";
     });
 
     socket.on('image', function(data) {
